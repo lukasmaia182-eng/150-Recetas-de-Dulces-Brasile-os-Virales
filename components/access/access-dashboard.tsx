@@ -1189,7 +1189,7 @@ function BonosSection() {
             <div className="relative size-24 shrink-0 overflow-hidden rounded-xl bg-secondary/40">
               <Image src={b.image || '/placeholder.svg'} alt={b.title} fill className="object-contain" />
             </div>
-            <div className="min-w-0">
+            <div className="flex min-w-0 flex-col">
               <p className="font-serif text-base font-black leading-tight text-foreground">{b.title}</p>
               <p className="mt-1 text-xs text-muted-foreground">{b.description}</p>
               <ul className="mt-2 space-y-1">
@@ -1200,6 +1200,16 @@ function BonosSection() {
                   </li>
                 ))}
               </ul>
+              <a
+                href={b.file}
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-xs font-bold text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                <Download className="size-3.5" />
+                {b.fileLabel}
+              </a>
             </div>
           </div>
         ))}
