@@ -16,28 +16,28 @@ const posters: Poster[] = [
     name: 'Boli de Fresa con Leche',
     rotate: -16,
     y: 52,
-    reveal: 'xl',
+    reveal: 'lg',
   },
   {
     src: '/dulces/posters/tartaleta-de-limon.png',
     name: 'Tartaleta de Limón',
     rotate: -12,
     y: 36,
-    reveal: 'lg',
+    reveal: 'md',
   },
   {
     src: '/dulces/posters/pastel-en-vaso-de-chocolate.png',
     name: 'Pastel en Vaso de Chocolate',
     rotate: -8,
     y: 22,
-    reveal: 'md',
+    reveal: 'always',
   },
   {
     src: '/dulces/posters/boli-de-chocolate-cremoso.png',
     name: 'Boli de Chocolate Cremoso',
     rotate: -4,
     y: 10,
-    reveal: 'sm',
+    reveal: 'always',
   },
   {
     src: '/dulces/posters/brigadeiro-tradicional.png',
@@ -51,28 +51,28 @@ const posters: Poster[] = [
     name: 'Mousse de Maracuyá',
     rotate: 4,
     y: 10,
-    reveal: 'sm',
+    reveal: 'always',
   },
   {
     src: '/dulces/posters/tartaleta-de-fresa.png',
     name: 'Tartaleta de Fresa',
     rotate: 8,
     y: 22,
-    reveal: 'md',
+    reveal: 'always',
   },
   {
     src: '/dulces/posters/brigadeiro-de-nutella.png',
     name: 'Brigadeiro de Nutella',
     rotate: 12,
     y: 36,
-    reveal: 'lg',
+    reveal: 'md',
   },
   {
     src: '/dulces/posters/copa-de-oreo.png',
     name: 'Copa de Oreo',
     rotate: 16,
     y: 52,
-    reveal: 'xl',
+    reveal: 'lg',
   },
 ]
 
@@ -107,7 +107,7 @@ export function PeekInsideSection() {
           return (
             <figure
               key={p.name}
-              className={`group relative -ml-10 first:ml-0 sm:-ml-12 md:-ml-14 ${revealClass[p.reveal]}`}
+              className={`group relative -ml-14 first:ml-0 sm:-ml-12 md:-ml-14 ${revealClass[p.reveal]}`}
               style={{
                 transform: `rotate(${p.rotate}deg) translateY(${p.y}px)`,
                 zIndex: isCenter ? 30 : 20 - Math.abs(i - 4),
@@ -116,8 +116,8 @@ export function PeekInsideSection() {
               <div
                 className={`overflow-hidden rounded-2xl border bg-card shadow-2xl ${
                   isCenter
-                    ? 'w-44 border-accent/60 ring-4 ring-accent/40 sm:w-52 md:w-60'
-                    : 'w-36 border-white/10 opacity-90 sm:w-40 md:w-44'
+                    ? 'w-28 border-accent/60 ring-4 ring-accent/40 sm:w-48 md:w-60'
+                    : 'w-24 border-white/10 opacity-90 sm:w-40 md:w-44'
                 }`}
               >
                 <Image
