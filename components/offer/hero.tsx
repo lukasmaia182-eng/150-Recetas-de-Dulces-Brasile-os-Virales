@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Check, Sparkles, Star } from 'lucide-react'
 import { CtaButton } from './cta-button'
 import { ScarcityBar } from './scarcity-bar'
+import { FlagsBackdrop } from './flags-backdrop'
 
 const benefits = [
   '150 recetas listas para usar',
@@ -14,7 +15,8 @@ const benefits = [
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[oklch(0.97_0.03_60)] via-[oklch(0.95_0.04_30)] to-[oklch(0.93_0.05_20)]">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 lg:grid-cols-2 lg:py-24">
+      <FlagsBackdrop />
+      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 lg:grid-cols-2 lg:py-24">
         <div>
           <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-xs font-bold uppercase tracking-wide text-primary">
             <Sparkles className="size-4" />
