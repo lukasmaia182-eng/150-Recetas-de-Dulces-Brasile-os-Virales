@@ -794,7 +794,7 @@ export const bonuses: Bonus[] = [
       'Diseño listo para compartir',
     ],
     file: '/bonos/menu-pronto.pdf',
-    fileLabel: 'Descargar menú (PDF)',
+    fileLabel: 'Ver menú',
   },
   {
     title: 'Lista de Ingredientes Económicos',
@@ -806,7 +806,7 @@ export const bonuses: Bonus[] = [
       'Rendimiento aproximado por ingrediente',
     ],
     file: '/bonos/lista-ingredientes.pdf',
-    fileLabel: 'Descargar lista (PDF)',
+    fileLabel: 'Ver lista',
   },
   {
     title: 'Calculadora Simple de Precio',
@@ -818,7 +818,7 @@ export const bonuses: Bonus[] = [
       'Ejemplos de precios sugeridos',
     ],
     file: '/bonos/calculadora-precio.pdf',
-    fileLabel: 'Descargar guía (PDF)',
+    fileLabel: 'Ver guía',
   },
   {
     title: 'Etiquetas Listas para Imprimir',
@@ -830,7 +830,7 @@ export const bonuses: Bonus[] = [
       'Varios tamaños incluidos',
     ],
     file: '/bonos/etiquetas-imprimir.pdf',
-    fileLabel: 'Descargar etiquetas (PDF)',
+    fileLabel: 'Ver etiquetas',
   },
   {
     title: 'Ideas de Combos para Vender Más',
@@ -842,7 +842,7 @@ export const bonuses: Bonus[] = [
       'Cómo ofrecer sin bajar tu ganancia',
     ],
     file: '/bonos/ideas-combos.pdf',
-    fileLabel: 'Descargar ideas (PDF)',
+    fileLabel: 'Ver ideas',
   },
 ]
 

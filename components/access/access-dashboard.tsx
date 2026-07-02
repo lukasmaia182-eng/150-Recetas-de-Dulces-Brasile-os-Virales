@@ -11,6 +11,7 @@ import {
   Clock,
   DollarSign,
   Download,
+  Eye,
   Gift,
   Heart,
   Home,
@@ -1200,16 +1201,25 @@ function BonosSection() {
                   </li>
                 ))}
               </ul>
-              <a
-                href={b.file}
-                download
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-xs font-bold text-primary-foreground transition-colors hover:bg-primary/90"
-              >
-                <Download className="size-3.5" />
-                {b.fileLabel}
-              </a>
+              <div className="mt-3 flex flex-wrap items-center gap-2">
+                <a
+                  href={b.file}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-fit items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-xs font-bold text-primary-foreground transition-colors hover:bg-primary/90"
+                >
+                  <Eye className="size-3.5" />
+                  {b.fileLabel}
+                </a>
+                <a
+                  href={b.file}
+                  download
+                  className="inline-flex w-fit items-center gap-1.5 rounded-full border border-border px-4 py-2 text-xs font-bold text-foreground transition-colors hover:bg-muted"
+                >
+                  <Download className="size-3.5" />
+                  Descargar
+                </a>
+              </div>
             </div>
           </div>
         ))}
