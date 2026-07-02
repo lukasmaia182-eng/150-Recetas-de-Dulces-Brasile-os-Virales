@@ -1,5 +1,6 @@
 import { Hero } from '@/components/offer/hero'
 import { BrazilSection } from '@/components/offer/brazil-section'
+import { PeekInsideSection } from '@/components/offer/peek-inside-section'
 import { ProblemSection } from '@/components/offer/problem-section'
 import { SolutionSection } from '@/components/offer/solution-section'
 import { IncludesSection } from '@/components/offer/includes-section'
@@ -16,6 +17,7 @@ export default function Page() {
     <main>
       <Hero />
       <BrazilSection />
+      <PeekInsideSection />
       <ProblemSection />
       <SolutionSection />
       <IncludesSection />
