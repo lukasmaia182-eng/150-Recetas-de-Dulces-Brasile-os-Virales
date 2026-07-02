@@ -991,10 +991,21 @@ function ComprasView() {
             Todo lo que necesitas para empezar, organizado por sección.
           </p>
         </div>
-        <span className="inline-flex w-fit items-center gap-2 rounded-full bg-secondary px-4 py-2 text-sm font-bold text-foreground">
-          <ShoppingCart className="size-4 text-primary" />
-          {done} de {total} listos
-        </span>
+        <div className="flex flex-wrap items-center gap-3">
+          <span className="inline-flex w-fit items-center gap-2 rounded-full bg-secondary px-4 py-2 text-sm font-bold text-foreground">
+            <ShoppingCart className="size-4 text-primary" />
+            {done} de {total} listos
+          </span>
+          <a
+            href="/bonos/lista-compras.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex w-fit items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-bold text-primary-foreground transition-colors hover:bg-primary/90"
+          >
+            <Eye className="size-4" />
+            Ver en PDF
+          </a>
+        </div>
       </div>
 
       <div className="grid gap-5 md:grid-cols-2">
@@ -1054,11 +1065,22 @@ const tipIconMap = {
 function TipsView() {
   return (
     <div className="space-y-8">
-      <div>
-        <h1 className="font-serif text-3xl font-black text-foreground">Tips para vender</h1>
-        <p className="text-sm text-muted-foreground">
-          Consejos prácticos para vender más y presentar tus dulces como un negocio profesional.
-        </p>
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <h1 className="font-serif text-3xl font-black text-foreground">Tips para vender</h1>
+          <p className="text-sm text-muted-foreground">
+            Consejos prácticos para vender más y presentar tus dulces como un negocio profesional.
+          </p>
+        </div>
+        <a
+          href="/bonos/tips-vender.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex w-fit items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-bold text-primary-foreground transition-colors hover:bg-primary/90"
+        >
+          <Eye className="size-4" />
+          Ver en PDF
+        </a>
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
