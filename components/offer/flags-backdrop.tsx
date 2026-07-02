@@ -1,5 +1,6 @@
-// Bandeiras decorativas simplificadas em CSS, usadas apenas como fundo da hero.
-// Nao interfere no conteudo nem nas imagens dos doces.
+// Varal de bandeirinhas decorativas (Colombia, Mexico, Chile, Uruguai,
+// Republica Dominicana e Peru) penduradas no topo da hero.
+// Apenas decoracao de fundo: nao interfere no conteudo nem nas imagens dos doces.
 
 function ColombiaFlag() {
   return (
@@ -80,33 +81,44 @@ function DominicanFlag() {
 type FlagItem = {
   name: string
   Flag: () => JSX.Element
-  className: string
   rotate: string
+  drop: string
 }
 
 const flags: FlagItem[] = [
-  { name: 'Colombia', Flag: ColombiaFlag, className: 'left-[4%] top-[10%] h-16 w-24 sm:h-20 sm:w-32', rotate: '-12deg' },
-  { name: 'Mexico', Flag: MexicoFlag, className: 'right-[6%] top-[8%] h-16 w-24 sm:h-20 sm:w-32', rotate: '10deg' },
-  { name: 'Peru', Flag: PeruFlag, className: 'left-[10%] top-[46%] h-14 w-20 sm:h-16 sm:w-28', rotate: '8deg' },
-  { name: 'Chile', Flag: ChileFlag, className: 'right-[10%] top-[42%] h-16 w-24 sm:h-20 sm:w-32', rotate: '-8deg' },
-  { name: 'Uruguay', Flag: UruguayFlag, className: 'left-[6%] bottom-[8%] h-16 w-24 sm:h-20 sm:w-32', rotate: '6deg' },
-  { name: 'Republica Dominicana', Flag: DominicanFlag, className: 'right-[5%] bottom-[10%] h-16 w-24 sm:h-20 sm:w-32', rotate: '-10deg' },
+  { name: 'Colombia', Flag: ColombiaFlag, rotate: '-6deg', drop: 'mt-1' },
+  { name: 'Mexico', Flag: MexicoFlag, rotate: '4deg', drop: 'mt-3' },
+  { name: 'Chile', Flag: ChileFlag, rotate: '-4deg', drop: 'mt-0.5' },
+  { name: 'Uruguay', Flag: UruguayFlag, rotate: '5deg', drop: 'mt-3' },
+  { name: 'Republica Dominicana', Flag: DominicanFlag, rotate: '-5deg', drop: 'mt-1' },
+  { name: 'Peru', Flag: PeruFlag, rotate: '6deg', drop: 'mt-3' },
 ]
 
 export function FlagsBackdrop() {
   return (
-    <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-      {flags.map(({ name, Flag, className, rotate }) => (
-        <div
-          key={name}
-          className={`absolute rounded-lg opacity-20 shadow-lg ring-1 ring-black/5 ${className}`}
-          style={{ transform: `rotate(${rotate})` }}
-        >
-          <div className="h-full w-full overflow-hidden rounded-lg">
-            <Flag />
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-x-0 top-0 z-0 overflow-hidden"
+    >
+      {/* Cordinha do varal */}
+      <div className="absolute left-0 right-0 top-6 h-px bg-foreground/25 sm:top-8" />
+
+      {/* Bandeirinhas penduradas */}
+      <div className="flex items-start justify-center gap-3 px-6 pt-6 sm:gap-6 sm:pt-8">
+        {flags.map(({ name, Flag, rotate, drop }) => (
+          <div key={name} className={`flex flex-col items-center ${drop}`}>
+            {/* nozinho */}
+            <div className="h-2 w-2 rounded-full bg-foreground/40" />
+            <div
+              className="mt-0.5 h-10 w-16 origin-top overflow-hidden rounded-sm shadow-md ring-1 ring-black/10 sm:h-14 sm:w-24"
+              style={{ transform: `rotate(${rotate})` }}
+              title={name}
+            >
+              <Flag />
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   )
 }
